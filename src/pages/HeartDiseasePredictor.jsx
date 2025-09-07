@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Heart, ArrowLeft, ExternalLink, Info, Loader2, CheckCircle, XCircle, Code } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { heart_disease_risk } from '../utility/index.js';
 
 const HeartDiseasePredictor = () => {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     age: 50,
     sex: 1,
@@ -53,15 +54,18 @@ const HeartDiseasePredictor = () => {
     };
 
     
+
     const res=await heart_disease_risk(payload);
+ 
 
-
+    //error handling of expected error
     if(res.detail.errors){
       setError(res.detail.errors.message);
       setResult(null);
       setLoading(false);
       return;
     }
+    
    
   const data = res.detail.data;
   const probs = data.prediction[0] || [0, 0];
