@@ -24,3 +24,4 @@ const try_catch = async(func) => {
    
 }
 export default try_catch;
+
