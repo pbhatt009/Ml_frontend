@@ -12,4 +12,13 @@ const heart_disease_risk = async (data) => {
     });
 };
 
-export { heart_disease_risk };
+const banking_complaint= async(data)=>{
+    return await try_catch(async () => {
+        const response = await axios.post(`${API_URL}/complaint/predict`, data);
+        
+        return response;
+    });
+
+}
+
+export { heart_disease_risk ,banking_complaint};

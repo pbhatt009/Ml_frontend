@@ -54,8 +54,9 @@ const HeartDiseasePredictor = () => {
     };
 
     
-    //error handling of unexpected error
+    
     const res=await heart_disease_risk(payload);
+    //error handling of unexpected error
     if(res.error_data){
       navigate('/error', { state: { error: res.error_data } });
       return;
