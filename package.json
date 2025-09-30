@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -30,4 +33,6 @@
     "globals": "^16.3.0",
     "vite": "^7.1.2"
   }
+
+
 }
